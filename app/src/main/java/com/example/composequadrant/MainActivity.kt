@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -52,13 +53,13 @@ fun Quadrant() {
                     messageTitle = stringResource(R.string.first_title),
                     message = stringResource(R.string.first_desc),
                     background = Color(0xFFEADDFF),
-                    modifier = Modifier.weight(1f)
+                    modifier = Modifier.weight(0.5f)
                 )
                 QuadrantInfoCard(
                     messageTitle = stringResource(R.string.second_title),
                     message = stringResource(R.string.second_desc),
                     background = Color(0xFFD0BCFF),
-                    modifier = Modifier.weight(1f)
+                    modifier = Modifier.weight(0.5f)
                 )
         }
         Row (Modifier.weight(1f)){
@@ -66,13 +67,13 @@ fun Quadrant() {
                     messageTitle = stringResource(R.string.third_title),
                     message = stringResource(R.string.third_desc),
                     background = Color(0xFFB69DF8),
-                    modifier = Modifier.weight(1f)
+                    modifier = Modifier.weight(0.5f)
                 )
                 QuadrantInfoCard(
                     messageTitle = stringResource(R.string.fourth_title),
                     message = stringResource(R.string.fourth_desc),
                     background = Color(0xFFF6EDFF),
-                    modifier = Modifier.weight(1f)
+                    modifier = Modifier.weight(0.5f)
                 )
         }
     }
@@ -82,18 +83,19 @@ fun QuadrantInfoCard(messageTitle: String, message: String, background : Color, 
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-            .padding(16.dp)
+        modifier = modifier
+            .padding(0.dp)
             .background(background)
             .fillMaxSize()) {
         Text(
             text = messageTitle,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(bottom = 16.dp)
+            modifier = Modifier.padding(bottom = 6.dp)
         )
         Text(
             text = message,
-            textAlign = TextAlign.Justify
+            textAlign = TextAlign.Justify,
+            modifier = Modifier.padding(16.dp)
         )
     }
 }
